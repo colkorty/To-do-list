@@ -1,0 +1,119 @@
+@font-face {
+    font-family: jost;
+    src: url(fonts/Jost-Regular.ttf);
+}
+
+@font-face {
+    font-family: jost;
+    src: url(fonts/Jost-Bold.ttf);
+    font-weight: bold;
+}  
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+body, input, button {
+    background-color: #101010;
+    color: white;
+    text-align: center;
+    font-family: "jost";
+}
+
+button, .delete-btn {
+    transition: transform 0.1s ease, background-color 0.2s ease;
+}
+
+button:active, .delete-btn:active {
+    transform: scale(0.95);
+}
+
+.delete-btn {
+    background-color: #666666;
+    color: white;
+    padding: 7px 14px;
+    font-size: 16px;
+    border: 1px solid #888888;
+    border-radius: 8px;
+    cursor: pointer;
+    outline: none;
+    box-shadow: none;
+    transition: transform 0.1s ease-in-out, background-color 0.2s;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 40px;
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
+
+.input {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.completed { 
+    text-decoration: line-through; 
+    color: #a0a0a0;
+}
+
+.container {
+    border: 1px solid #606060;
+    border-radius: 8px;
+    background-color: #303030;
+    min-height: 300px;
+    width: 600px;
+    padding-right: 20px;
+    margin: 30px auto 0;
+    word-break: break-all;
+}
+
+li.task-done {  
+    opacity: 0.7;
+}
+
+#taskInput {
+    background-color: #1a1a1a;
+    border: 1px solid #303030;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    width: 200px;
+    height: 30px;
+    text-align: left;
+    outline: none;
+}
+
+#taskInput:focus {
+    border-color: #505050;
+}
+
+#taskInput::placeholder {
+    color: #606060;
+}
+
+#taskList li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    border-bottom: 1px solid #505050;
+}
+
+#addButton {
+    background-color: #666666;
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: 1px solid #888888;
+    border-radius: 8px;
+    cursor: pointer;
+    outline: none;
+    box-shadow: none;
+    transition: transform 0.1s ease-in-out, background-color 0.2s;
+}

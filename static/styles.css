@@ -6,14 +6,19 @@
 @font-face {
     font-family: jost;
     src: url(fonts/Jost-Bold.ttf);
-    font-weight: bold;
+    font-weight: 700;
 }  
+
+* {
+  box-sizing: border-box;
+}
 
 body {
     margin: 0;
     padding: 0;
-    height: 100vh;
-    width: 100vw;
+    padding-inline: 15px;
+    min-height: 100vh;
+    width: 100%;
 }
 
 body, input, button {
@@ -45,10 +50,11 @@ button:active, .delete-btn:active {
 }
 
 .title {
-    font-weight: bold;
-    font-size: 40px;
-    margin-top: 60px;
+    margin-top: clamp(30px, 6vw, 60px);;
     margin-bottom: 30px;
+
+    font-weight: 700;
+    font-size: clamp(28px, 5vw, 40px);
 }
 
 .input {
@@ -63,13 +69,14 @@ button:active, .delete-btn:active {
 }
 
 .container {
+    background-color: #303030;
     border: 1px solid #606060;
     border-radius: 8px;
-    background-color: #303030;
-    min-height: 300px;
-    width: 600px;
-    padding-right: 20px;
-    margin: 30px auto 0;
+    min-height: 200px;
+    max-width: 600px;
+    padding: 20px;
+    margin: 15px auto;
+
     word-break: break-all;
 }
 
@@ -80,11 +87,13 @@ li.task-done {
 #taskInput {
     background-color: #1a1a1a;
     border: 1px solid #303030;
-    padding: 12px 20px;
-    font-size: 16px;
     border-radius: 8px;
-    width: 200px;
-    height: 30px;
+
+    max-width: 400px;
+    width: 100%;
+    padding: 12px 20px;
+
+    font-size: 16px;
     text-align: left;
     outline: none;
 }
@@ -116,4 +125,12 @@ li.task-done {
     outline: none;
     box-shadow: none;
     transition: transform 0.1s ease-in-out, background-color 0.2s;
+    max-width: 150px;
+}
+
+@media (max-width: 480px) {
+    .input {
+        flex-direction: column;
+        align-items: center;
+    }   
 }

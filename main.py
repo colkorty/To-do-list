@@ -17,7 +17,14 @@ def init_db():
 
 	conn.commit()
 	conn.close()
-	
+
+@app.before_request
+def log_request_payload():
+    if request.method in ["POST", "PUT"]:
+        data = request.get_json(silent=True)
+
+        print(f"[{request.method}] Маршрут: {request.path} | Данные: {data}", flush=True)
+
 @app.route("/")
 def index():
 	return render_template("index.html")
@@ -41,7 +48,7 @@ def get_tasks():
 				"completed": bool(row[2]),
 			}
 		)
-	
+
 	return jsonify(tasks)
 
 @app.route("/api/tasks", methods = ["POST"])
